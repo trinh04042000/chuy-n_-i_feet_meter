@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Chuyển đổi feet and meter</h2>
+<form>
+    Amount
+    <input type="text" name="amount" id="txtAmount">
+    From Unit
+    <select name="from_unit" id="ddlFromUnit" value="feet">
+        <option value="feet">FEET</option>
+        <option value="meter">METER</option>
+    </select>
+    To Unit
+    <select name="to_unit" id="ddlUnit">
+        <option value="meter">METER</option>
+        <option value="feet">FEET</option>
+    </select>
+    <button type="button" id ="btnConvert" onclick="computations()">Convert</button>
+</form>
+<script>
+    function computations () {
+        var amount = document.getElementById("txtAmount").value;
+        var from_unit = document.getElementById("ddlFromUnit").value;
+        var to_unit = document.getElementById("ddlUnit").value;
+        var result;
+
+        if (from_unit === "feet") {
+            if (to_unit === "meter") {
+                result = amount * 0.305 ;
+            } else if (to_unit === "feet") {
+                result = amount;
+            }
+        }
+        else if (from_unit === "meter") {
+            if (to_unit === "feet") {
+                result = amount * 3.279;
+            }
+            else if (to_unit === "meter") {
+                result = amount;
+            }
+        }
+        alert(result);
+
+    }
+</script>
+</body>
+</html>
